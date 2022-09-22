@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<table style="width: 100%;" class="table table-dark table-hover">
+    <tr>
+        <th>Commentid</th>
+        <th>RegistrationId</th>
+        <th>BusId</th>
+        <th>Comment</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let comment of commentlist">
+        <td>{{comment.commentid}}</td>
+        <td>{{comment.registrationid}}</td>
+        <td>{{comment.busid}}</td>
+        <td>{{comment.comment}}</td>
+        <td><button class="btn btn-danger" (click)="deletecomment(comment);refresh()">Delete</button></td>
+    </tr>
+</table>

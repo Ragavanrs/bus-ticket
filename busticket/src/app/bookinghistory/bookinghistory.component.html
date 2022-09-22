@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="table-responsive">
+    <table style="width: 100%;" class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Booking order id</th>
+                <th>Registration id</th>
+                <th>Busid</th>
+                <th>seatsbooked</th>
+                <th>dateoftravel</th>
+                <th>fare</th>
+                <th>Add Comment</th>
+                <th>modify</th>
+                <th>cancel</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let order of bookorder">
+            <tr *ngIf="order.registrationid == registrationid">
+                <td>{{order.sno}}</td>
+                <td>{{order.registrationid}}</td>
+                <td>{{order.busid}}</td>
+                <td>{{order.seatsbooked}}</td>
+                <td>{{order.dateoftravel}}</td>
+                <td>{{order.fare}}</td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="comment(order)" data-whatever="@fat">Add Comment</button>
+                </td>
+                <td>
+
+                    <button class="btn btn-success" (click)="modifyorder(order)">modify</button></td>
+                <td> <button class="btn btn-danger" (click)="cancelbooking(order);refresh()">cancel</button></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

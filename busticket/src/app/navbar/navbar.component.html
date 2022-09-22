@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <a class="navbar-brand" href="#" style="color: aliceblue;">Mb Booking</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <button class="btn btn-secondary" (click)="home()">Home <span class="sr-only">(current)</span></button>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-secondary" (click)="bookinghistory()">booking history</button>
+            </li>
+
+            <li *ngIf="isadmin" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
+           admin access
+          </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <button class="dropdown-item" (click)="updateuser()">update user</button>
+                    <button class="dropdown-item" (click)="addbus()">add bus details</button>
+                    <button class="dropdown-item" (click)="updatebus()">update bus details</button>
+                    <button class="dropdown-item" (click)="viewcomments()">view comments</button>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="logout()" routerLinkActive="router-link-active" style="color: aliceblue;">Log out</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>

@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<br>
+
+
+<form #booknow="ngForm">
+    <table width="100%" class="table table-dark table-hover">
+        <tr>
+            <th>
+                busid
+            </th>
+            <th>Bus name</th>
+            <th>bus image</th>
+            <th>date of travel</th>
+            <th>Number of seats</th>
+            <th>Fare</th>
+            <th>Book</th>
+        </tr>
+        <tr>
+            <td>
+                {{busdetails.busid}}
+            </td>
+            <td>
+                {{busdetails.busname}}
+            </td>
+            <td> <img id="img-circle" style="height: 100px;width: 200px;" src="{{busdetails.busimage}}" alt="">
+            </td>
+            <td>
+                <input type='date' name="dateoftravel" #myDate ngModel [(ngModel)]='date' required />
+            </td>
+            <td>
+                <select id="seats" name="seatsbooked" style="width: 100px;" ngModel [(ngModel)]="seatsbooked" required>
+                <option  selected >1</option>
+                <option *ngFor="let key of [2,3,4,5]" >{{key}}</option>
+              </select>
+            </td>
+            <td>
+                <input name="fare" ngModel [(ngModel)]="busdetails.fare * seatsbooked ">
+
+
+            </td>
+            <td>
+                <button class="btn btn-success" [disabled]="booknow.invalid" (click)="bookorder(booknow.value)">book now</button>
+            </td>
+
+
+        </tr>
+
+    </table>
+</form>

@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+
+                <form #myForm="ngForm" (submit)="onSubmit(myForm.value);myForm.reset()">
+                    <h5 class="value2">Add bus details</h5>
+                    <br>
+                    <div class="form-group ">
+                        <label>bus name</label><br>
+                        <input type="text" name="busname" class="form-control" placeholder="Enter your busname" [(ngModel)]="model.busname" #busname="ngModel" [ngClass]="{ 'is-invalid': busname.touched && busname.pristine }" required>
+                        <div *ngIf="busname.touched " class="invalid-feedback">
+                            <div *ngIf="busname.errors">busname is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>bus image</label><br>
+                        <input type="text" name="busimage" class="form-control" placeholder="enter url" [(ngModel)]="model.busimage" #busimage="ngModel" [ngClass]="{ 'is-invalid': busimage.touched && busimage.pristine }" required>
+                        <div *ngIf="busimage.touched && busimage.pristine" class="invalid-feedback">
+                            <div *ngIf="busimage.touched">busimage url is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Departure</label><br>
+                        <input type="text" name="departure" class="form-control" placeholder="enter departure" [(ngModel)]="model.departure" #departure="ngModel" [ngClass]="{ 'is-invalid': departure.touched && departure.pristine }" required>
+                        <div *ngIf="departure.touched && departure.pristine" class="invalid-feedback">
+                            <div *ngIf="departure.touched">departure is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Arrival</label><br>
+                        <input type="text" name="arrival" class="form-control" placeholder="enter destination" [(ngModel)]="model.arrival" #arrival="ngModel" [ngClass]="{ 'is-invalid': arrival.touched && arrival.pristine }" required>
+                        <div *ngIf="arrival.touched && arrival.pristine" class="invalid-feedback">
+                            <div *ngIf="arrival.touched">arrival is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Departure time</label><br>
+                        <input type="text" name="departuretime" class="form-control" placeholder="enter departure time" [(ngModel)]="model.departuretime" #departuretime="ngModel" [ngClass]="{ 'is-invalid': departuretime.touched && departuretime.pristine }" required>
+                        <div *ngIf="departuretime.touched && departuretime.pristine" class="invalid-feedback">
+                            <div *ngIf="departuretime.touched">departure time is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Arrival time</label><br>
+                        <input type="text" name="arrivaltime" class="form-control" placeholder="enter arrival time" [(ngModel)]="model.arrivaltime" #arrivaltime="ngModel" [ngClass]="{ 'is-invalid': arrivaltime.touched && arrivaltime.pristine }" required>
+                        <div *ngIf="arrivaltime.touched && arrivaltime.pristine" class="invalid-feedback">
+                            <div *ngIf="arrivaltime.touched">arrival time is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Fare</label><br>
+                        <input type="text" name="fare" class="form-control" placeholder="enter fare" [(ngModel)]="model.fare" #fare="ngModel" [ngClass]="{ 'is-invalid': fare.touched && fare.pristine }" required>
+                        <div *ngIf="fare.touched && fare.pristine" class="invalid-feedback">
+                            <div *ngIf="fare.touched">fare is required</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Seats available</label><br>
+                        <input type="text" name="seatsavailable" class="form-control" placeholder="enter seatsavailable" [(ngModel)]="model.seatsavailable" #seatsavailable="ngModel" [ngClass]="{ 'is-invalid': seatsavailable.touched && seatsavailable.pristine }" required>
+                        <div *ngIf="seatsavailable.touched && seatsavailable.pristine" class="invalid-feedback">
+                            <div *ngIf="seatsavailable.touched">fare is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>route details</label><br>
+                        <input type="text" height="80" name="routedetails" class="form-control" placeholder="enter routedetails" [(ngModel)]="model.routedetails" #routedetails="ngModel" [ngClass]="{ 'is-invalid': routedetails.touched && routedetails.pristine }" required>
+                        <div *ngIf="routedetails.touched && routedetails.pristine" class="invalid-feedback">
+                            <div *ngIf="routedetails.touched">routedetails is required</div>
+                        </div>
+                    </div>
+
+                    <input type="submit" [disabled]="myForm.invalid" class="fadeIn fourth" value="add busdetails">
+
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

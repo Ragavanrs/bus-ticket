@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+                <div class="card-body">
+                    <div *ngIf="passwordvalid" class="fadeIn fourth" style="color: rgb(231, 18, 18);">
+                        <h4>password does not match</h4>
+                    </div>
+
+                    <form #myForm="ngForm" (submit)="onSubmit(myForm.value);myForm.reset();">
+                        <h5 class="value2">Register to Book Tickets</h5>
+                        <br>
+                        <div class="form-group ">
+                            <label>Name</label><br>
+                            <input type="text" name="name" class="form-control" placeholder="Enter your Name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': name.touched && name.pristine }" required>
+                            <div *ngIf="name.touched " class="invalid-feedback">
+                                <div *ngIf="name.errors">Name is required</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Email</label><br>
+                            <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required email>
+                            <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
+                                <div *ngIf="email.touched">Email is required</div>
+                                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                        <div *ngIf="invalidemail" class="fadeIn fourth" style="color: rgb(231, 18, 18);">
+                            <h6>Email Already Registered</h6>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label><br>
+                            <input type="text" name="mobile" class="form-control" placeholder="enter your mobile number" [(ngModel)]="model.mobile" #mobile="ngModel" [ngClass]="{ 'is-invalid': mobile.touched && mobile.pristine }" required>
+                            <div *ngIf="mobile.touched && mobile.pristine" class="invalid-feedback">
+                                <div *ngIf="mobile.touched">mobile number is required</div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>password</label><br>
+                            <input type="password" name="userpassword" class="form-control" placeholder="enter your password" [(ngModel)]="model.userpassword" #userpassword="ngModel" [ngClass]="{ 'is-invalid': userpassword.touched && userpassword.pristine }" required>
+                            <div *ngIf="userpassword.touched && userpassword.pristine" class="invalid-feedback">
+                                <div *ngIf="userpassword.touched">userpassword is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>confirm password</label><br>
+                            <input type="text" name="confirmpassword" class="form-control" placeholder="enter your password" [(ngModel)]="model.confirmpassword" #confirmpassword="ngModel" [ngClass]="{ 'is-invalid': confirmpassword.touched && confirmpassword.pristine }" required>
+                            <div *ngIf="confirmpassword.touched && confirmpassword.pristine" class="invalid-feedback">
+                                <div *ngIf="confirmpassword.touched">confirm password is required</div>
+                            </div>
+                        </div>
+                        <input type="submit" [disabled]="myForm.invalid" class="fadeIn fourth" value="Create Account">
+                        <h5><a [routerLink]="['/']">Login</a></h5>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

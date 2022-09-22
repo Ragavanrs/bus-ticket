@@ -1,0 +1,55 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{values.busname}}</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="close()" aria-label=" Close ">
+            <span aria-hidden="true ">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body ">
+                <table style="width: 100%; " class="table table-dark table-hover">
+                    <tr>
+                        <td style="width: 30%; ">bud id:</td>
+                        <td style="width: 70%; " colspan="3">{{values.busid}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%; ">bus name:</td>
+                        <td style="width: 70%; " colspan="3">{{values.busname}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%; ">Route details:</td>
+                        <td style="width: 70%; " colspan="3">{{values.routedetails}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%; ">Seats available:</td>
+                        <td style="width: 70%; " colspan="3">{{values.seatsavailable}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">departure:</td>
+                        <td style="width: 30%;">{{values.departure}}</td>
+                        <td style="width: 20%;">arrival:</td>
+                        <td style="width: 30%;">{{values.arrival}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%;">departure time:</td>
+                        <td style="width: 30%;">{{values.departuretime}}</td>
+                        <td style="width: 20%;">arrival time:</td>
+                        <td style="width: 30%;">{{values.arrivaltime}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%;">bus image</td>
+                        <td style="width: 70%;" colspan="3">
+                            <img id="img1" src="{{values.busimage}}" title="bus">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%; ">Fare:</td>
+                        <td style="width: 70%; " colspan="3">{{values.fare}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

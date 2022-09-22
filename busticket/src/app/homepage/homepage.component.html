@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="value1">
+    <div class="container">
+
+        <br>
+        <br>
+        <div class="row">
+
+
+            <div class="wrapper fadeInDown">
+                <div id="formContent">
+                    <!-- Tabs Titles -->
+
+                    <!-- Icon -->
+                    <br>
+                    <br>
+                    <div class="fadeIn first">
+
+                    </div>
+
+                    <!-- Login Form -->
+                    <form #myForm="ngForm" (submit)="search(myForm.value)">
+                        <h5 class="value2">Search to book<span class="#xf835;"></span></h5>
+
+                        <label for="from">From</label><br>
+                        <select id="from" class="form-control" name="from" [(ngModel)]="from" required>
+                            <option  selected >Select Place</option>
+                            <option *ngFor="let place of location" >{{place.locationname}}</option>
+                          </select>
+                        <label for="to">Destination</label><br>
+                        <select id="to" class="form-control" aria-placeholder="to" name="to" [(ngModel)]="to" required>
+                            <option value="" >Select Place</option>
+                            <option *ngFor="let place of location">{{place.locationname}}</option>
+                          </select>
+                        <input type="submit" [disabled]="myForm.invalid && myForm.touched" class="fadeIn fourth" value="Search">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+
+
+</div>
+<table width="100%">
+    <div class="a1" *ngFor="let company of details ">
+        <div class="card" style="margin: 10px;">
+            <div class="card-body" appHome>
+
+                <tr>
+
+                    <td style="width:24%">
+                        <h5>Bus Name:{{company.busname}}</h5>
+                    </td>
+                    <td style="width:12%">Departure:{{company.departure}}</td>
+                    <td style="width: 6%;">to</td>
+                    <td style="width:12%;">Arrival:{{company.arrival}}</td>
+                    <td style="width:11%"><button type="button" class="btn btn-info" (click)="viewcomments(company)" data-toggle="modal" data-target="#exampleModalCenter">View Comments</button></td>
+
+                    <td style="width:10%"><button type="button" class="btn btn-primary" (click)="busdetails(company)" data-toggle="modal" data-target="#exampleModalCenter">View Details</button>
+                    </td>
+                    <td style="width:10%"><button type="button" class="btn btn-success" (click)="booknow(company)">Book now</button></td>
+
+                </tr>
+
+
+            </div>
+        </div>
+    </div>
+
+</table>
+<router-outlet></router-outlet>
